@@ -1,19 +1,18 @@
 <nav class="navbar-wagon">
-  <div class="container navbar-wagon-container">
+  <div class="container-fluid navbar-wagon-container">
 
-    <a href="">
-      <%= image_tag "logo.png", class: "navbar-wagon-logo" %>
-    </a>
+    <div class="logo fadeIn">
+      <?xml version="1.0" encoding="utf-8"?>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="50" viewBox="0 0 208 128">
+        <rect style="fill:none;stroke:#7C7C7C;stroke-width:10" width="198" height="118" x="5" y="5" ry="10" />
+        <path style="fill:#7C7C7C" d="m 30,98 0,-68 20,0 20,25 20,-25 20,0 0,68 -20,0 0,-39 -20,25 -20,-25 0,39 z" />
+        <path style="fill:#7C7C7C" d="m 155,98 -30,-33 20,0 0,-35 20,0 0,35 20,0 z" />
+      </svg>
+      <span class="logo-text">Bin</span>
+    </div>
 
     <div class="navbar-wagon-pusher"></div>
 
-    <form action="" class="navbar-wagon-search hidden-xs hidden-sm">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
-    <hr class="hidden-xs hidden-sm">
     <% if user_signed_in? %>
       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
         <div class="icon-badge-container">
@@ -45,9 +44,11 @@
         </div>
       </div>
     <% else %>
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
     <hr>
-    <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to new_bin_path, class: "navbar-wagon-item navbar-wagon-button btn" do %>
+      <i class="fa fa-plus"></i> New Bin
+    <% end %>
   </div>
 </nav>
