@@ -18,12 +18,36 @@
 
 .logo {
   visibility: hidden;
+  margin-top: 9px;
 }
 .logo-text {
-  font-family: Oswald;
-  font-weight:900;
-  font-size: 20px;
+  font-family: 'Source Code Pro';
+  font-weight: 900;
+  font-size: 24px;
   color: #7C7C7C;
-  top: -6px;
+  top: -7px;
   position: relative;
+}
+
+
+.flexbox{
+  position:absolute;
+  width:100%;
+  height:100%;
+  display: flex;
+  flex-direction:column;
+}
+
+.flex{
+  flex:1;
+  display:flex;
+}
+
+.markdown-editor{
+  width:100%;
+  display:block;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
 }

@@ -1,5 +1,6 @@
 class BinsController < ApplicationController
   before_action :set_bin, only: [:show, :edit, :update, :destroy]
+  before_action :set_options, only: [:new, :edit]
 
   def show
   end
@@ -15,11 +16,17 @@ class BinsController < ApplicationController
   end
 
   def edit
+    @options[:url] = bin_path(identifier: @bin.slug)
   end
 
   def update
     @bin.update(bin_params)
-    redirect_to bin_path(@bin.slug)
+    respond_to do |format|
+      format.html do
+        redirect_to bin_path(@bin.slug)
+      end
+      format.js
+    end
   end
 
   def destroy
@@ -35,6 +42,15 @@ class BinsController < ApplicationController
 
   def set_bin
     @bin = Bin.find_by_slug(params[:slug])
+  end
+
+  def set_options
+    @options = {
+      html: {
+        id: :theBin
+      },
+      remote: true
+    }
   end
 
 end

@@ -1,4 +1,5 @@
-<%= simple_form_for @bin, :url => bin_path(identifier: @bin.slug) do |f| %>
-  <%= f.input :content, label: false, input_html: { class: "simplemde"} %>
-  <%= f.submit %>
+<% content_for :editor_buttons do %>
+  <%= link_to "Save Bin", "#", id: "saveBin" %>
 <% end %>
+
+<%= render 'form' %>
