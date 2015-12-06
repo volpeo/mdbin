@@ -12,7 +12,12 @@ class BinsController < ApplicationController
   def create
     @bin = Bin.new(bin_params)
     @bin.save
-    redirect_to bin_path(@bin.slug)
+    respond_to do |format|
+      format.html do
+        redirect_to bin_path(@bin.slug)
+      end
+      format.js
+    end
   end
 
   def edit

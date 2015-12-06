@@ -1,0 +1,4 @@
+window.history.pushState('<%= @bin.slug %>', 'MD Bin', '/<%= @bin.slug %>/edit');
+                          // /evepolam?identifier=evepolam
+$('#theBin').attr('action', '/<%= @bin.slug %>?identifier=<%= @bin.slug %>');
+$('#theBin').find('[name="_method"]').attr('value', 'patch');

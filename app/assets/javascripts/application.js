@@ -59,3 +59,12 @@ $('#saveBin').on('click', function(e) {
   e.preventDefault();
   $('#commitBin').trigger('click');
 });
+
+$('#forkBin').on('click', function(e) {
+  e.preventDefault();
+  // alter the action route to new
+  $('#theBin').attr('action', '/');
+  $('#theBin').find('[name="_method"]').attr('value', 'post');
+  $('#commitBin').trigger('click');
+
+});
