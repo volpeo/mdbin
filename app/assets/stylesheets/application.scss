@@ -51,3 +51,15 @@
   -ms-transform: translateZ(0);
   transform: translateZ(0);
 }
+
+@media screen and (min-width: 1024px) {
+  .editor-preview-side, .CodeMirror-sided {
+    top: 0;
+  }
+  .editor-toolbar.fullscreen {
+    position: fixed;
+    top: -50px;
+    left: 120px;
+    width: auto;
+  }
+}

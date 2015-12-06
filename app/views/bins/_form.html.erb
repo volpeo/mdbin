@@ -1,10 +1,10 @@
 <% content_for :editor_buttons do %>
   <% unless current_user %>
-    <%= link_to "Fork Bin", "javascript:alert('hack me please : just modify the action url ?')", id: "forkBin" %>
+    <%= link_to "Fork Bin", "#", id: "forkBin", class: "btn btn-default btn-sm" %>
     <% end %>
     <% unless current_user and @bin.user == current_user %>
       <%# TODO : handle with pundit %>
-      <%= link_to "Save Bin", "#", id: "saveBin" %>
+      <%= link_to "Save Bin", "#", id: "saveBin", class: "btn btn-default btn-sm" %>
     <% end %>
 <% end %>
 
