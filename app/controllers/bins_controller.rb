@@ -20,7 +20,7 @@ class BinsController < ApplicationController
     @bin.save
     respond_to do |format|
       format.html do
-        redirect_to edit_bin_path(@bin.slug)
+        redirect_to edit_bin_path(@bin.slug), notice: "Saved!"
       end
       format.js
     end
