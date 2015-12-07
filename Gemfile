@@ -7,6 +7,7 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'redcarpet'
+gem 'omniauth-github'
 
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'

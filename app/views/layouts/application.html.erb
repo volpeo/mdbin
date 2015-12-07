@@ -12,6 +12,7 @@
 
     <%= yield(:loading) %>
     <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
     <%= yield %>
     <script src="https://cdn.jsdelivr.net/highlight.js/latest/highlight.min.js"></script>
     <%= javascript_include_tag 'application' %>
