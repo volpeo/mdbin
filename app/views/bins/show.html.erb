@@ -1,5 +1,12 @@
+<% content_for :editor_buttons do %>
+  <%#= link_to "Fork Bin", "#", id: "forkBin", class: "btn btn-default btn-sm" %>
+  <%# TODO : how to Fork when no form ? Maybe a post to a new endpoint with the slug of forked bin ? %>
+  <%# unless current_user and @bin.user == current_user %>
+    <%# TODO : handle with pundit %>
+    <%= link_to "Edit Bin", edit_bin_path(@bin.slug), class: "btn btn-default btn-sm" %>
+  <%# end %>
+<% end %>
+
 <div class="container">
   <%= markdown @bin.content %>
-  <hr>
-  <%= link_to "Edit", edit_bin_path(@bin.slug) %>
 </div>

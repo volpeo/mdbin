@@ -8,7 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/latest/styles/github.min.css">
   </head>
-  <body class="flexbox">
+  <body class="flexbox <%= controller.controller_name + "_" +params[:action] %>">
+
+    <%= yield(:loading) %>
     <%= render 'shared/navbar' %>
     <%= yield %>
     <script src="https://cdn.jsdelivr.net/highlight.js/latest/highlight.min.js"></script>

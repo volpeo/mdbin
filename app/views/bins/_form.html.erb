@@ -1,3 +1,7 @@
+<% content_for :loading do %>
+  <%= render 'shared/loading' %>
+<% end %>
+
 <% content_for :editor_buttons do %>
   <% unless current_user %>
     <%= link_to "Fork Bin", "#", id: "forkBin", class: "btn btn-default btn-sm" %>
@@ -16,3 +20,6 @@
     <% end %>
   </div>
 </div>
+
+<%= render 'image_modal' %>
+<%= render 'link_modal' %>
