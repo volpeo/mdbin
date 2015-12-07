@@ -4,16 +4,28 @@
   <ul class="list-unstyled">
     <% current_user.bins.each do |bin| %>
     <li>
-      <h3><%= link_to bin.slug, bin_path(bin.slug) %></h3>
+      <h3>
+        <%= link_to bin.slug, bin_path(bin.slug) %>
+        <%= link_to "Edit", edit_bin_path(bin.slug), class: "btn btn-default btn-xs" %>
+        <%= link_to "Delete", bin_path(bin.slug),
+          class: "btn btn-danger btn-xs",
+          method: :delete,
+          data: {
+            confirm: "Are your sure you want to delete this bin?"
+          }
+        %>
+      </h3>
       <p class="text-muted">
         <small>
           Created <%= l bin.created_at, format: :short %>
-          <%= "| Updated " + l(bin.updated_at, format: :short) if bin.created_at != bin.updated_at %>
+          <%= "&mdash; Updated ".html_safe + l(bin.updated_at, format: :short) if bin.created_at != bin.updated_at %>
         </small>
       </p>
-      <%= link_to edit_bin_path(bin.slug) do %>
+      <% if bin.content.blank? %>
+        <p class="text-muted">Empty bin, it will be destroy at next cleaning day if still empty...</p>
+      <% else %>
         <div class="markdown-preview">
-          <%= truncate(bin.content, length: 200, separator: ' ') %>
+          <%= markdown truncate(bin.content, length: 200, separator: ' ') %>
         </div>
       <% end %>
       <hr>

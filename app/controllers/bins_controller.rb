@@ -43,6 +43,7 @@ class BinsController < ApplicationController
 
   def destroy
     @bin.destroy
+    redirect_to my_bins_path()
   end
 
 
