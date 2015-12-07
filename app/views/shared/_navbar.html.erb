@@ -28,8 +28,8 @@
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
+              <%= link_to my_bins_path do %>
+                <i class="fa fa-file"></i>  <%= t ".profile", default: "My Bins" %>
               <% end %>
             </li>
             <li>
@@ -45,7 +45,7 @@
     <% end %>
     <hr>
     <%= link_to new_bin_path, class: "navbar-wagon-item navbar-wagon-button btn" do %>
-      <i class="fa fa-plus"></i> New Bin
+      New Bin
     <% end %>
   </div>
 </nav>

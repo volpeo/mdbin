@@ -1,1 +1,9 @@
+<% content_for :editor_buttons do %>
+  <%= link_to "Show Bin", bin_path(@bin.slug), class: "btn btn-primary btn-sm" %>
+  <% if @bin.user and current_user == @bin.user %>
+    <%= link_to "Save", "#", id: "saveBin", class: "btn btn-default btn-sm" %>
+  <% end %>
+  <%= link_to "Fork", "#", id: "forkBin", class: "btn btn-default btn-sm" %>
+<% end %>
+
 <%= render 'form' %>

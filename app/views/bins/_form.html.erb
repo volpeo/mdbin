@@ -2,16 +2,6 @@
   <%= render 'shared/loading' %>
 <% end %>
 
-<% content_for :editor_buttons do %>
-  <% unless current_user %>
-    <%= link_to "Fork Bin", "#", id: "forkBin", class: "btn btn-default btn-sm" %>
-    <% end %>
-    <% unless current_user and @bin.user == current_user %>
-      <%# TODO : handle with pundit %>
-      <%= link_to "Save Bin", "#", id: "saveBin", class: "btn btn-default btn-sm" %>
-    <% end %>
-<% end %>
-
 <div class="flex">
   <div class="markdown-editor">
     <%= simple_form_for @bin, (@options || {}) do |f| %>

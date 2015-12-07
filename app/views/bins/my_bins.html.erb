@@ -1,0 +1,26 @@
+
+<div class="container">
+
+  <ul class="list-unstyled">
+    <% current_user.bins.each do |bin| %>
+    <li>
+      <h3><%= link_to bin.slug, bin_path(bin.slug) %></h3>
+      <p class="text-muted">
+        <small>
+          Created <%= l bin.created_at, format: :short %>
+          <%= "| Updated " + l(bin.updated_at, format: :short) if bin.created_at != bin.updated_at %>
+        </small>
+      </p>
+      <%= link_to edit_bin_path(bin.slug) do %>
+        <div class="markdown-preview">
+          <%= truncate(bin.content, length: 200, separator: ' ') %>
+        </div>
+      <% end %>
+      <hr>
+    </li>
+    <% end %>
+  </ul>
+  <p class="text-center">
+    <%= link_to "New bin", root_path(), class: "btn btn-default" %>
+  </p>
+</div>

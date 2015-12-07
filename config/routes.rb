@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  resources :bins, param: :slug, only: [:new, :create, :show, :edit, :update, :destroy], path: ''
+  resources :bins, param: :slug, only: [:new, :create, :show, :edit, :update, :destroy], path: '' do
+    collection do
+      get 'my_bins', as: :my
+    end
+  end
+
   root to: 'bins#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
