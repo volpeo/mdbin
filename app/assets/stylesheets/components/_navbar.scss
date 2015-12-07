@@ -9,3 +9,13 @@
   top: -5px;
   position: relative;
 }
+
+
+.bins_show .navbar-wagon {
+  background: transparent;
+  box-shadow: none;
+  opacity: 0.3;
+  &:hover {
+    opacity: 1;
+  }
+}

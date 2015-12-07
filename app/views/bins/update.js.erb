@@ -1,1 +1,7 @@
 console.log("saved")
+
+
+$('<%= j render 'shared/saving_flash' %>').appendTo('.flashes');
+setTimeout(function() {
+  $('.alert-to-delete').first().remove();
+}, 1000);

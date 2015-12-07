@@ -87,14 +87,26 @@ $(document).ready(function(){
     document.addEventListener("keydown", function(e) {
       if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
         e.preventDefault();
+        loadSaveFlash();
         $('#commitBin').trigger('click');
       }
     }, false);
 
     $('#saveBin').on('click', function(e) {
       e.preventDefault();
+      loadSaveFlash();
       $('#commitBin').trigger('click');
     });
+
+    var loadSaveFlash = function () {
+      // cloner le flash de save
+      var $flashSave = $('#flash-save').clone()
+        .removeAttr('id')
+        .removeClass('hidden')
+        .addClass('alert-to-delete');
+      // le append
+      $(".flashes").first().append($flashSave);
+    }
 
     $('#forkBin').on('click', function(e) {
       e.preventDefault();

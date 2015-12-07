@@ -21,6 +21,12 @@
 .alert-warning {
   background: $red;
 }
+.alert-saving {
+  background: $red;
+}
+.alert-saved {
+  background: $green;
+}
 
 
 .disapearUp {
@@ -29,6 +35,25 @@
 
   animation-delay: 3s;
   -webkit-animation-delay: 3s;
+
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+
+  visibility: visible !important;
+}
+
+.disapearUpNow {
+  animation-name: disapearUp;
+  -webkit-animation-name: disapearUp;
+
+  animation-delay: 0s;
+  -webkit-animation-delay: 0s;
 
   animation-duration: 1s;
   -webkit-animation-duration: 1s;
