@@ -32,6 +32,7 @@
                 <i class="fa fa-file"></i>  <%= t ".profile", default: "My Bins" %>
               <% end %>
             </li>
+            <li role="separator" class="divider"></li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
