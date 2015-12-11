@@ -2,26 +2,26 @@
   <div class="container-fluid navbar-wagon-container">
 
     <div class="logo fadeIn">
-      <%= render 'shared/logo' %>
+      <%= link_to root_path do %>
+        <%= render 'shared/logo' %>
+      <% end %>
     </div>
 
     <div class="navbar-wagon-pusher"></div>
 
-    <div><%= yield(:editor_buttons) %></div>
-
-    <hr>
+    <%= yield(:editor_buttons) %>
 
     <% if user_signed_in? %>
+      <hr>
+      <%= link_to my_bins_path, class: "btn btn-default btn-sm" do %>
+        <i class="fa fa-file-text-o"></i> My bins
+      <% end %>
+      <hr>
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%= image_tag current_user.picture || "http://api.adorable.io/avatars/300/#{current_user.email}", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to my_bins_path do %>
-                <i class="fa fa-file"></i>  <%= t ".profile", default: "My Bins" %>
-              <% end %>
-            </li>
-            <li role="separator" class="divider"></li>
+            <!-- <li role="separator" class="divider"></li> -->
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
@@ -32,10 +32,6 @@
       </div>
     <% else %>
       <%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <% end %>
-    <hr>
-    <%= link_to new_bin_path, class: "navbar-wagon-item navbar-wagon-button btn" do %>
-      New Bin
     <% end %>
   </div>
 </nav>

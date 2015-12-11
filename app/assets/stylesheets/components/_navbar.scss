@@ -1,21 +1,32 @@
-.logo {
-  margin-top: 9px;
-}
-.logo-text {
-  font-family: 'Source Code Pro';
-  font-weight: 900;
-  font-size: 24px;
-  color: #7C7C7C;
-  top: -5px;
-  position: relative;
-}
-
-
-.bins_show .navbar-wagon {
-  background: transparent;
-  box-shadow: none;
-  opacity: 0.3;
-  &:hover {
-    opacity: 1;
+.navbar-wagon {
+  .logo {
+    a {
+      padding-top: 9px;
+      text-decoration: none;
+      display: block;
+    }
   }
+  .logo-text {
+    font-family: 'Source Code Pro';
+    font-weight: 900;
+    font-size: 24px;
+    color: #7C7C7C;
+    top: -5px;
+    position: relative;
+  }
+
+
+  .bins_show .navbar-wagon {
+    background: transparent;
+    box-shadow: none;
+    opacity: 0.3;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .btn {
+    margin-left: 5px;
+  }
+
 }
