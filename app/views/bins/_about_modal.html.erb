@@ -1,0 +1,94 @@
+<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+        <h3>About</h3>
+        <p>
+          <%= link_to "mdbin.io", root_path %> has been created with <i class="fa fa-heart"></i> by 
+          <%= link_to "@volpeo", "https://twitter.com/volpeo", target: "_blank" %>
+        </p>
+        <p><strong>Features</strong></p>
+        <ul>
+          <li>create markdown/html documents (bins) easily with realtime preview,</li>
+          <li>hit save and you have an unique URL redirecting to your bin,</li>
+          <li>create an account to keep a list of your bins,</li>
+          <li>use shortcuts like ctrl/⌘+B for bold or ctrl/⌘+S to save your bin,</li>
+          <li>copy (fork) a bin that already exist.</li>
+        </ul>
+
+        <p><strong>Features to come</strong></p>
+        <ul>
+          <li>full responsive,</li>
+          <li>css themes for html view,</li>
+          <li>vanity URL,</li>
+          <li>image upload,</li>
+          <li>versionning...</li>
+        </ul>
+        <h3>A small guide to Markdown</h3>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Result</th>
+              <th>Markdown</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bold</strong></td>
+              <td>**text**</td>
+            </tr>
+            <tr>
+              <td><em>Emphasize</em></td>
+              <td>*text*</td>
+            </tr>
+            <tr>
+              <td><a href="#">Link</a></td>
+              <td>[title](http://)</td>
+            </tr>
+            <tr>
+              <td><code>Inline Code</code></td>
+              <td>`code`</td>
+            </tr>
+            <tr>
+              <td>Image</td>
+              <td>![alt](http://)</td>
+            </tr>
+            <tr>
+              <td>List</td>
+              <td>* item</td>
+            </tr>
+            <tr>
+              <td>Blockquote</td>
+              <td>&gt; quote</td>
+            </tr>
+            <tr>
+              <td>H1</td>
+              <td># Heading</td>
+            </tr>
+            <tr>
+              <td>H2</td>
+              <td>## Heading</td>
+            </tr>
+            <tr>
+              <td>H3</td>
+              <td>### Heading</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          See more here
+        </p>
+
+        <h3>Want to practice Markdown ?</h3>
+
+        <a href="http://www.markdown-tutorial.com" target="_blank">Let's start a tutorial now!</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
