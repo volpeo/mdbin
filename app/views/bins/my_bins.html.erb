@@ -2,7 +2,7 @@
 <div class="container">
 
   <ul class="list-unstyled">
-    <% current_user.bins.each do |bin| %>
+    <% current_user.bins.reverse.each do |bin| %>
     <li>
       <h3>
         <%= link_to bin.slug, bin_path(bin.slug) %>
